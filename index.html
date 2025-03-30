@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>French Toast Recipe</title>
+    <title>Easy Crepes Recipe</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
@@ -12,21 +12,6 @@
             margin: 0;
             padding: 0;
             color: #333;
-        }
-        .discord-btn {
-            background-color: #5865F2;
-            color: white;
-            font-size: 20px;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-            text-decoration: none;
-            font-family: Arial, sans-serif;
-        }
-        .discord-btn:hover {
-            background-color: #4752c4;
         }
         .container {
             max-width: 1200px;
@@ -47,71 +32,34 @@
         h1 {
             color: #FF6F61;
             font-size: 36px;
-            margin-bottom: 20px;
-            text-align: center;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .time, .people {
-            font-size: 18px;
             text-align: center;
             margin-bottom: 20px;
-            color: #555;
-            width: 100%;
-        }
-        .time span {
-            font-weight: bold;
-            color: #333;
-        }
-        .recipe-img {
-            width: 100%;
-            max-width: 450px;
-            height: auto;
-            border-radius: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            transition: transform 0.3s ease-in-out;
-        }
-        .recipe-img:hover {
-            transform: scale(1.05);
         }
         .recipe-details {
-            width: 100%;
             max-width: 550px;
-            padding-right: 30px;
         }
-        .recipe-details h2 {
+        h2 {
             color: #FF6F61;
             font-size: 24px;
-            margin-top: 20px;
             margin-bottom: 10px;
         }
         ul, ol {
             padding-left: 20px;
         }
         li {
-            margin: 15px 0;
             font-size: 18px;
             line-height: 1.8;
             color: #666;
         }
-        .people input {
-            width: 90px;
-            text-align: center;
-            font-size: 18px;
-            padding: 10px;
-            border: 2px solid #FF6F61;
-            border-radius: 10px;
-            margin-left: 10px;
-            transition: all 0.3s ease;
+        .recipe-img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
         }
-        .people input:hover {
-            border-color: #FF4E43;
+        .recipe-img:hover {
             transform: scale(1.05);
-        }
-        .people input:focus {
-            outline: none;
-            border-color: #FF4E43;
-            box-shadow: 0 0 8px rgba(255, 94, 98, 0.5);
         }
         button {
             background-color: #FF6F61;
@@ -128,79 +76,59 @@
             background-color: #FF4E43;
             transform: translateY(-3px);
         }
-        .additional-img {
-            width: 100%;
-            max-width: 450px;
-            height: auto;
-            border-radius: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-            transition: transform 0.3s ease-in-out;
-        }
-        .additional-img:hover {
-            transform: scale(1.05);
-        }
-        .images-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-        }
-        .images-container img {
-            width: 100%;
-            max-width: 450px;
-            height: auto;
-            border-radius: 20px;
+        .people input {
+            width: 90px;
+            text-align: center;
+            font-size: 18px;
+            padding: 10px;
+            border: 2px solid #FF6F61;
+            border-radius: 10px;
+            margin-left: 10px;
+            transition: all 0.3s ease;
         }
     </style>
     <script>
-        let baseQuantities = { eggs: 2, milk: 100, bread: 2, butter: 10 };
-
         function updateServings() {
-            let persons = parseInt(document.getElementById('peopleInput').value) || 4;
-            document.getElementById('eggs').innerText = persons * baseQuantities.eggs / 2;
-            document.getElementById('milk').innerText = (persons * baseQuantities.milk / 2) + 'ml';
-            document.getElementById('bread').innerText = persons * baseQuantities.bread / 2;
-            document.getElementById('butter').innerText = (persons * baseQuantities.butter / 2) + 'g';
+            let persons = parseInt(document.getElementById('peopleInput').value) || 2;
+            document.getElementById('flour').innerText = persons * 50 + 'g';
+            document.getElementById('eggs').innerText = persons * 1;
+            document.getElementById('milk').innerText = persons * 75 + 'ml';
+            document.getElementById('butter').innerText = persons * 5 + 'g';
         }
     </script>
 </head>
 <body>
     <div class="container">
         <div class="recipe-details">
-            <h1>French Toast Recipe</h1>
-            <p class="time">⏳ Preparation time: <span>10 minutes</span> | Serves: <input type="number" id="peopleInput" value="4" min="1" onchange="updateServings()"> slices</p>
-
+            <h1>Easy Crepes Recipe</h1>
+            <p>⏳ Preparation time: <span>15 minutes</span> | Servings: 
+                <input type="number" id="peopleInput" value="2" min="1" onchange="updateServings()"> people
+            </p>
+            
             <h2>Ingredients:</h2>
             <ul>
-                <li><span id="eggs">2</span> eggs</li>
-                <li><span id="milk">100ml</span> milk</li>
-                <li><span id="bread">2</span> slices of bread</li>
-                <li><span id="butter">10g</span> butter</li>
+                <li><span id="flour">50g</span> flour</li>
+                <li><span id="eggs">1</span> egg</li>
+                <li><span id="milk">75ml</span> milk</li>
+                <li>1 tbsp sugar</li>
+                <li>1/2 tsp salt</li>
+                <li><span id="butter">5g</span> melted butter</li>
             </ul>
-
+            
             <h2>Instructions:</h2>
             <ol>
-                <li><b>Whisk</b> the eggs and milk pours in a bowl.</li>
-                <li><b>Dip</b> the bread into the mixture.</li>
-                <li><b>Heat</b> the butter in a pan on medium heat.</li>
-                <li><b>Cook</b> poute slice in the stove fore 1 minute by rate .</li>
-                <li><b>Serve</b> hot with maple syrup.</li>
+                <li>Mix flour, sugar, and salt in a bowl.</li>
+                <li>In another bowl, beat eggs, add milk and melted butter.</li>
+                <li>Slowly mix everything together until smooth.</li>
+                <li>Heat a pan on medium heat and grease lightly.</li>
+                <li>Pour a little batter, spread thinly.</li>
+                <li>Cook 1-2 minutes per side until golden.</li>
+                <li>Eat with toppings you like!</li>
             </ol>
-
+            
             <button onclick="window.print()">Print Recipe</button>
-            <a href="https://discord.gg/fg95Gnx7" class="discord-btn" target="_blank">🔗 Rejoindre mon Discord</a>
         </div>
-
-        <!-- Images section -->
-        <div class="images-container">
-            <!-- Main image to the left -->
-            <img src="https://cdn.apartmenttherapy.info/image/upload/f_auto,q_auto:eco,c_fit,w_730,h_913/k%2FPhoto%2FRecipes%2F2024-04-french-toast%2Ffrench-toast-765_1" alt="French Toast" class="recipe-img">
-
-            <!-- Additional image below the first one -->
-            <img src="https://jepasseaunaturel.fr/wp-content/uploads/2020/10/pain-perdu-05.png" alt="Pain Perdu" class="additional-img">
-        </div>
+        <img src="https://www.thespruceeats.com/thmb/bxlR5QeFwDq9gWqoa4nY0PtAo8I=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/french-crepes-recipe-1375423-hero-01-5c39b73f46e0fb0001a4b5a5.jpg" alt="Crepes" class="recipe-img">
     </div>
 </body>
 </html>
